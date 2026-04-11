@@ -21,10 +21,10 @@ export default function ContactForm() {
     message: "",
   });
 
-  // Initialize EmailJS (use environment variable in production)
+  // Initialize EmailJS from environment variables
   const initEmailJS = () => {
     if (!window.emailjsInitialized) {
-      emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // Replace with your public key
+      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
       window.emailjsInitialized = true;
     }
   };
@@ -43,7 +43,7 @@ export default function ContactForm() {
 
       // Send email via EmailJS
       const templateParams = {
-        to_email: "hello@techsynergy.com", // Your email
+        to_email: "info@techsynergyhq.com",
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
@@ -53,8 +53,8 @@ export default function ContactForm() {
       };
 
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your service ID
-        "YOUR_TEMPLATE_ID", // Replace with your template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
