@@ -79,7 +79,7 @@ export default function Home() {
 
             {/* SUBHEADLINE — explains HOW */}
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-              We design conversion-focused websites, landing pages, and systems that capture leads and turn them into paying customers — automatically. Built specifically for construction companies, local service providers, and real estate firms.
+              We design high-converting websites and systems that capture leads, increase inquiries, and help you grow your business — without relying on referrals alone.
             </p>
 
             {/* CTAs */}
@@ -90,6 +90,13 @@ export default function Home() {
               <Button onClick={openContactForm} variant="outline" className="border-2 border-gray-300 text-gray-700 rounded-lg px-8 py-4 text-lg font-bold hover:border-lime-500 hover:bg-lime-50 transition-all">
                 Get More Clients Now →
               </Button>
+            </div>
+
+            {/* Trust line directly under CTAs */}
+            <div className="flex flex-wrap gap-6 text-sm font-semibold text-gray-600 mb-10">
+              <span className="flex items-center gap-2"><CheckCircle size={15} className="text-lime-500" /> 50+ Projects Completed</span>
+              <span className="flex items-center gap-2"><CheckCircle size={15} className="text-lime-500" /> Built for Service-Based Businesses</span>
+              <span className="flex items-center gap-2"><CheckCircle size={15} className="text-lime-500" /> Results-Driven Approach</span>
             </div>
 
             {/* Trust stats — ABOVE THE FOLD */}
@@ -231,11 +238,11 @@ export default function Home() {
               {
                 icon: <Zap className="text-lime-600" size={32} />,
                 tag: null,
-                outcome: "Hours saved. Revenue gained.",
-                title: "Business Automation",
-                body: "Stop drowning in admin. We automate your quotes, follow-ups, reminders, and onboarding — so you spend time doing the work that makes you money.",
-                features: ["Automated quote follow-ups", "Review collection system", "Appointment reminders", "Client onboarding workflows", "Payment integrations"],
-                cta: "Automate My Business →",
+                outcome: "More customers from your existing traffic.",
+                title: "Conversion Optimisation",
+                body: "Already getting visitors but not enough enquiries? We audit and optimise every element of your website so more visitors pick up the phone and call you.",
+                features: ["Full conversion audit", "CTA & layout optimisation", "Trust signal improvements", "Speed & mobile fixes", "A/B tested improvements"],
+                cta: "Optimise My Website →",
               },
             ].map((s) => (
               <Card key={s.title} className="p-8 border-2 border-gray-100 hover:border-lime-400 hover:shadow-xl transition-all group relative overflow-hidden bg-white">
@@ -349,17 +356,17 @@ export default function Home() {
               <div>
                 <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-6 uppercase tracking-wide">Free — No Obligation</span>
                 <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                  Get a Free Website Audit
-                  <span className="block text-lime-600">Worth $500</span>
+                  Your Website Might Be Losing You Clients Every Day
+                  <span className="block text-lime-600 text-3xl mt-2">Here is how we fix it — free.</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                  We will analyse your current website and show you exactly why you are not getting leads — and the precise steps to fix it. No fluff. No sales pressure. Just actionable insights you can use immediately.
+                  We will review your website and show you exactly what is stopping visitors from becoming paying clients — and the precise steps to fix it fast. No cost. No obligation. Just clarity.
                 </p>
                 <ul className="space-y-4 mb-8">
                   {[
-                    "Why your website is not converting visitors into leads",
-                    "What your competitors are doing that you are missing",
-                    "The exact changes that will get you more enquiries",
+                    "Why visitors are not converting into leads",
+                    "What is costing you enquiries right now",
+                    "How to fix it fast — without rebuilding everything",
                     "A custom roadmap to grow your online leads",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-3">
@@ -437,7 +444,7 @@ export default function Home() {
 
             {/* Growth */}
             <Card className="p-8 bg-gray-900 text-white border-2 border-lime-500 shadow-2xl relative scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-lime-500 text-gray-900 px-5 py-1 rounded-full text-xs font-black uppercase whitespace-nowrap">⭐ Best Value</div>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-lime-500 text-gray-900 px-5 py-1 rounded-full text-xs font-black uppercase whitespace-nowrap">⭐ Most Popular</div>
               <p className="text-xs font-black text-lime-400 uppercase tracking-wide mb-2">For Growing Businesses</p>
               <h3 className="text-2xl font-black text-white mb-1">Lead Machine Package</h3>
               <p className="text-gray-400 text-sm mb-6">Your complete client-getting system — built to generate consistent enquiries and book clients on autopilot</p>
