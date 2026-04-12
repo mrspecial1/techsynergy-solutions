@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Zap, Globe, Smartphone, Cog, TrendingUp, ExternalLink, MessageCircle, Mail, Phone, CheckCircle, AlertTriangle, Clock, Star, DollarSign, Shield } from "lucide-react";
+import { ArrowRight, Zap, Globe, Smartphone, Cog, TrendingUp, ExternalLink, MessageCircle, Mail, Phone, CheckCircle, AlertTriangle, Clock, Star, DollarSign, Shield, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import ContactForm from "@/components/ContactForm";
 import Testimonials from "@/components/Testimonials";
@@ -29,9 +29,11 @@ export default function Home() {
       <LeadMagnet />
 
       {/* Urgency Banner */}
-      <div className="bg-gray-900 text-lime-400 text-center py-2 px-4 text-sm font-semibold z-50 relative">
-        Only <span className="text-white font-bold">{slotsLeft} client spots</span> available this month —{" "}
-        <button onClick={openContactForm} className="underline hover:text-white transition">Claim yours now →</button>
+      <div className="bg-gray-900 text-center py-2 px-4 text-sm font-semibold z-50 relative">
+        <span className="text-gray-400">Only </span>
+        <span className="text-lime-400 font-bold">{slotsLeft} client spots</span>
+        <span className="text-gray-400"> available this month — </span>
+        <button onClick={openContactForm} className="text-white underline hover:text-lime-400 transition">Claim yours before it's gone →</button>
       </div>
 
       {/* Navigation */}
@@ -44,111 +46,146 @@ export default function Home() {
           <div className="flex items-center gap-4 md:gap-6">
             <a href="#results" className="text-gray-700 hover:text-lime-600 transition font-medium text-sm hidden md:inline">Results</a>
             <a href="#services" className="text-gray-700 hover:text-lime-600 transition font-medium text-sm hidden md:inline">Services</a>
+            <a href="#audit" className="text-gray-700 hover:text-lime-600 transition font-medium text-sm hidden md:inline">Free Audit</a>
             <a href="#pricing" className="text-gray-700 hover:text-lime-600 transition font-medium text-sm hidden md:inline">Pricing</a>
             <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-600 text-gray-900 font-bold rounded-lg px-4 md:px-6 py-2 text-sm transition-all hover:shadow-lg">
-              Get More Clients →
+              Book Free Audit →
             </Button>
           </div>
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ===== HERO ===== */}
       <section className="relative pt-36 pb-24 md:pt-48 md:pb-36 overflow-hidden">
         <div className="absolute inset-0 z-0" style={{ backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/hero-background-jLzVKRuEcukMN8VdXkfvE7.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/97 to-white/60 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/97 to-white/50 z-0" />
+
         <div className="container relative z-10">
           <div className="max-w-2xl">
+
+            {/* Trust pill */}
             <div className="inline-flex items-center gap-2 bg-lime-50 border border-lime-200 rounded-full px-4 py-2 mb-8">
-              <span className="text-base">🇺🇸🇬🇧🇨🇦</span>
-              <span className="text-sm font-semibold text-gray-700">Trusted by 50+ service businesses in the US &amp; UK</span>
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map((s) => <Star key={s} size={12} className="text-lime-500 fill-lime-500" />)}
+              </div>
+              <span className="text-sm font-semibold text-gray-700">50+ service businesses trust us in the US &amp; UK</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              We Help Service Businesses Get{" "}
-              <span className="text-lime-600">2–5x More Clients</span>{" "}
-              With Websites That Actually Convert
+
+            {/* HEADLINE — believable, outcome-driven */}
+            <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-5 leading-tight">
+              We Build Lead-Generating Websites That Turn{" "}
+              <span className="text-lime-600">Visitors Into Paying Clients</span>
             </h1>
+
+            {/* SUBHEADLINE — explains HOW */}
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-              We build high-converting websites and lead generation systems for construction companies, local service providers, and real estate firms — so your website stops being a brochure and starts being your #1 salesperson.
+              We design conversion-focused websites, landing pages, and systems that capture leads and turn them into paying customers — automatically. Built specifically for construction companies, local service providers, and real estate firms.
             </p>
+
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-600 text-gray-900 font-bold rounded-lg px-8 py-4 text-lg flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all">
+              <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-600 text-gray-900 font-black rounded-lg px-8 py-4 text-lg flex items-center gap-2 hover:shadow-xl hover:scale-105 transition-all">
                 Book Your Free Website Audit <ArrowRight size={20} />
               </Button>
-              <Button onClick={openContactForm} variant="outline" className="border-2 border-gray-300 text-gray-700 rounded-lg px-8 py-4 text-lg font-semibold hover:border-lime-500">
-                See Our Results ↓
+              <Button onClick={openContactForm} variant="outline" className="border-2 border-gray-300 text-gray-700 rounded-lg px-8 py-4 text-lg font-bold hover:border-lime-500 hover:bg-lime-50 transition-all">
+                Get More Clients Now →
               </Button>
             </div>
-            <div className="flex flex-wrap gap-8">
-              {[{ num: "50+", label: "Clients Served" }, { num: "98%", label: "Client Satisfaction" }, { num: "3x", label: "Avg. Lead Increase" }, { num: "5 Yrs", label: "Experience" }].map((s) => (
+
+            {/* Trust stats — ABOVE THE FOLD */}
+            <div className="flex flex-wrap gap-8 mb-6">
+              {[
+                { num: "50+", label: "Projects Completed" },
+                { num: "98%", label: "Client Satisfaction" },
+                { num: "£/$3k+", label: "Avg. Client Revenue Gained" },
+                { num: "5 Yrs", label: "Industry Experience" },
+              ].map((s) => (
                 <div key={s.num}>
                   <p className="text-2xl md:text-3xl font-black text-lime-600">{s.num}</p>
                   <p className="text-sm text-gray-500 font-medium">{s.label}</p>
                 </div>
               ))}
             </div>
+
+            {/* Trusted by logos row */}
+            <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Trusted by growing businesses</p>
+            <div className="flex flex-wrap gap-6 opacity-50">
+              {["Nexorwa Energies", "Ogintech Services", "Premier Realty", "SwiftFix Plumbing"].map((name) => (
+                <span key={name} className="text-gray-500 font-bold text-xs border border-gray-200 rounded px-3 py-1">{name}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* LOGOS */}
-      <section className="py-10 bg-gray-50 border-y border-gray-100">
+      {/* ===== PROBLEM SECTION — hits HARD ===== */}
+      <section className="py-20 md:py-28 bg-gray-950 text-white">
         <div className="container">
-          <p className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Businesses we have helped grow</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50">
-            {["Nexorwa Energies", "Ogintech Services", "Local Builders Co.", "Premier Realty", "SwiftFix Plumbing"].map((name) => (
-              <span key={name} className="text-gray-500 font-bold text-sm md:text-base">{name}</span>
-            ))}
+          <div className="max-w-3xl mx-auto">
+            <span className="inline-block bg-red-500/20 text-red-400 text-xs font-bold px-4 py-1 rounded-full mb-6 uppercase tracking-wide">The Brutal Truth</span>
+
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+              Your Website Looks Good.<br />
+              <span className="text-red-400">But It's Not Bringing You Clients.</span>
+            </h2>
+
+            <div className="space-y-6 mb-12 text-lg text-gray-300 leading-relaxed max-w-2xl">
+              <p>Visitors come to your site — and leave without calling.</p>
+              <p>You've got no way to capture their details. No follow-up. No system.</p>
+              <p className="font-semibold text-white">Meanwhile, your competitors — with faster, sharper, conversion-built websites — are capturing those exact same leads and turning them into paying customers.</p>
+              <p className="text-xl font-black text-red-400">Every day your website doesn't convert... you're losing money. Real money.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                { icon: <AlertTriangle size={24} className="text-red-400" />, title: "You're invisible on Google", body: "If you're not on page 1, you don't exist. Competitors are stealing traffic you should own." },
+                { icon: <TrendingUp size={24} className="text-orange-400" />, title: "Your website leaks leads", body: "No clear CTA. No lead capture. Visitors leave and you never know they existed." },
+                { icon: <Clock size={24} className="text-yellow-400" />, title: "You chase every enquiry manually", body: "You're too busy on the job to follow up fast. The client calls someone else. Job lost." },
+              ].map((item) => (
+                <div key={item.title} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-red-500/40 transition-all">
+                  <div className="mb-4">{item.icon}</div>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-lime-500 rounded-2xl p-8 text-center">
+              <p className="text-gray-900 text-xl md:text-2xl font-black mb-6">
+                This is fixable. And it starts with one free conversation.
+              </p>
+              <Button onClick={openContactForm} className="bg-gray-900 text-lime-400 hover:bg-gray-800 font-black px-8 py-3 rounded-lg text-lg">
+                Claim Your Free Website Audit →
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* PROBLEM */}
+      {/* ===== HOW WE HELP ===== */}
       <section className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="inline-block bg-red-100 text-red-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Sound Familiar?</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Your Website Is Costing You Clients Every Single Day</h2>
-            <p className="text-lg text-gray-600">While you are busy running your business, potential clients are landing on your website — and leaving to call your competitor instead.</p>
+            <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">How We Help</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              We Do Not Build Websites.<br />
+              <span className="text-lime-600">We Build Client-Getting Machines.</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Every page, every button, every word on your website is engineered to do one thing: turn visitors into paying clients. Here is how.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {[
-              { icon: <AlertTriangle className="text-red-500" size={28} />, bg: "bg-red-50", title: '"I have a website but no one calls"', body: "You invested money in a website but it looks like every other contractor. Visitors cannot tell why they should choose you — so they do not." },
-              { icon: <TrendingUp className="text-orange-500" size={28} />, bg: "bg-orange-50", title: '"My competitors keep stealing my leads"', body: "While your website sits there doing nothing, competitors with fast, professional sites are scooping up clients that should have been yours." },
-              { icon: <Clock className="text-yellow-600" size={28} />, bg: "bg-yellow-50", title: '"I am too busy to chase every enquiry"', body: "You miss calls, forget follow-ups, and lose jobs because you are on the tools all day. You need a system that works while you work." },
-            ].map((item) => (
-              <Card key={item.title} className="p-8 border-2 border-gray-100 hover:border-red-200 hover:shadow-lg transition-all">
-                <div className={`w-14 h-14 ${item.bg} rounded-xl flex items-center justify-center mb-5`}>{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 italic">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.body}</p>
-              </Card>
-            ))}
-          </div>
-          <div className="max-w-2xl mx-auto text-center bg-gray-900 text-white rounded-2xl p-10">
-            <p className="text-xl md:text-2xl font-bold leading-relaxed">Every day your website fails to convert is another day your competitor wins a client that should have been yours.</p>
-            <p className="text-gray-400 mt-4 text-lg">That ends today.</p>
-            <Button onClick={openContactForm} className="mt-8 bg-lime-500 hover:bg-lime-400 text-gray-900 font-bold px-8 py-3 rounded-lg text-lg">Fix My Website Now →</Button>
-          </div>
-        </div>
-      </section>
 
-      {/* SOLUTION */}
-      <section className="py-20 md:py-32 bg-gray-50">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">The Solution</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">A Website That Works as Hard as You Do — 24/7</h2>
-            <p className="text-lg text-gray-600">We do not just build websites. We build client-generating machines that capture leads, book appointments, and follow up automatically — even when you are on the job.</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: <TrendingUp size={20} />, title: "Turn visitors into paying clients", body: "Every page is engineered with one goal: get the visitor to contact you. Clear messaging, trust signals, and strategic CTAs guide them straight to your phone." },
-              { icon: <Zap size={20} />, title: "Capture leads automatically — even at 2am", body: "Your lead capture system works around the clock. Forms, callbacks, and integrations ensure no enquiry slips through the cracks." },
-              { icon: <Smartphone size={20} />, title: "Look more professional than any competitor", body: "A modern, fast, mobile-perfect website instantly positions you as the premium choice in your area." },
-              { icon: <Cog size={20} />, title: "Stop chasing leads — let automation do it", body: "Automated follow-up sequences keep you top-of-mind with every lead. Fewer no-shows, faster conversions, more revenue." },
-              { icon: <Globe size={20} />, title: "Rank higher on Google, get found first", body: "Our sites are built SEO-first so you show up when local customers search for your services. Free traffic, forever." },
-              { icon: <DollarSign size={20} />, title: "A real ROI — not just a pretty site", body: "We track what matters: leads, calls, bookings, and revenue. You will know exactly what your website is earning you." },
+              { icon: <TrendingUp size={20} />, title: "Turn visitors into paying clients", body: "Every page is built with conversion architecture — trust signals, clear messaging, and CTAs that guide visitors straight to contacting you." },
+              { icon: <Zap size={20} />, title: "Capture leads automatically — even at 2am", body: "While you sleep, your website collects enquiries, sends follow-ups, and books appointments. Wake up to new leads in your inbox." },
+              { icon: <Smartphone size={20} />, title: "Look more credible than any competitor", body: "A fast, professional, mobile-perfect site instantly positions you as the premium choice — before you even speak to a client." },
+              { icon: <Cog size={20} />, title: "Automate follow-ups — stop losing warm leads", body: "Automated sequences re-engage every enquiry. No more lost leads because you were too busy to reply fast enough." },
+              { icon: <Globe size={20} />, title: "Get found on Google — for free", body: "Built SEO-first so local customers find you when they search for your services. Consistent traffic. Zero ad spend." },
+              { icon: <DollarSign size={20} />, title: "Know exactly what your website earns you", body: "Clear analytics tracking leads, calls, and bookings. You will know your website's ROI down to the last pound or dollar." },
             ].map((item) => (
-              <div key={item.title} className="flex gap-5 bg-white rounded-xl p-6 border border-gray-100 hover:shadow-md hover:border-lime-200 transition-all">
+              <div key={item.title} className="flex gap-5 bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-lime-300 hover:shadow-md transition-all">
                 <div className="w-10 h-10 bg-lime-100 rounded-lg flex items-center justify-center flex-shrink-0 text-lime-600">{item.icon}</div>
                 <div>
                   <h3 className="text-base font-bold text-gray-900 mb-1">{item.title}</h3>
@@ -160,24 +197,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="py-20 md:py-32 bg-white">
+      {/* ===== SERVICES — OUTCOME-BASED ===== */}
+      <section id="services" className="py-20 md:py-32 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">What We Do</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Three Ways We Get You More Clients</h2>
-            <p className="text-lg text-gray-600">Each service is designed with one goal: more leads, more bookings, more revenue.</p>
+            <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Our Services</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+              Three Ways We Get You More Clients
+            </h2>
+            <p className="text-lg text-gray-600">Not features. Not tech. Pure outcomes — more enquiries, more bookings, more revenue.</p>
           </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: <Globe className="text-lime-600" size={32} />, tag: "Most Popular", pitch: "Your 24/7 sales machine", title: "High-Converting Website", body: "A custom-built website that does not just look good — it generates leads. Every element is designed to build trust fast and push visitors to contact you.", features: ["Mobile-first design", "Fast page speed", "Conversion-optimised layout", "Local SEO built-in", "Lead capture forms"], cta: "Get My Website →" },
-              { icon: <Smartphone className="text-lime-600" size={32} />, tag: null, pitch: "Never miss an enquiry again", title: "Lead Generation System", body: "Landing pages, booking systems, and automated follow-ups that capture every lead and turn them into booked appointments — on autopilot.", features: ["High-converting landing pages", "Online booking system", "Automated email follow-ups", "CRM integration", "Lead tracking dashboard"], cta: "Start Generating Leads →" },
-              { icon: <Zap className="text-lime-600" size={32} />, tag: null, pitch: "Work less, earn more", title: "Business Automation", body: "We automate the repetitive admin stealing hours from your day — so you can focus on the work that actually makes you money.", features: ["Automated quote follow-ups", "Review collection system", "Appointment reminders", "Client onboarding workflows", "Payment integrations"], cta: "Automate My Business →" },
+              {
+                icon: <Globe className="text-lime-600" size={32} />,
+                tag: "Most Popular",
+                outcome: "More enquiries from your website",
+                title: "High-Converting Websites",
+                body: "Forget brochure websites. We build sites that are engineered to generate leads. Every element — layout, copy, speed, CTAs — is optimised to turn visitors into clients.",
+                features: ["Conversion-optimised design", "Mobile-first & fast-loading", "Local SEO built in", "Lead capture forms", "Trust signals & social proof"],
+                cta: "Get My Client-Winning Website →",
+              },
+              {
+                icon: <Smartphone className="text-lime-600" size={32} />,
+                tag: null,
+                outcome: "Consistent enquiries on autopilot",
+                title: "Lead Generation Systems",
+                body: "Landing pages, booking systems, and automated follow-up sequences that work 24/7 — so you wake up to new leads without lifting a finger.",
+                features: ["High-converting landing pages", "Online booking & scheduling", "Automated email follow-ups", "CRM integration", "Lead tracking dashboard"],
+                cta: "Start Getting Leads Automatically →",
+              },
+              {
+                icon: <Zap className="text-lime-600" size={32} />,
+                tag: null,
+                outcome: "Hours saved. Revenue gained.",
+                title: "Business Automation",
+                body: "Stop drowning in admin. We automate your quotes, follow-ups, reminders, and onboarding — so you spend time doing the work that makes you money.",
+                features: ["Automated quote follow-ups", "Review collection system", "Appointment reminders", "Client onboarding workflows", "Payment integrations"],
+                cta: "Automate My Business →",
+              },
             ].map((s) => (
-              <Card key={s.title} className="p-8 border-2 border-gray-100 hover:border-lime-400 hover:shadow-xl transition-all group relative overflow-hidden">
-                {s.tag && <div className="absolute top-0 right-0 bg-lime-500 text-gray-900 text-xs font-black px-3 py-1 rounded-bl-lg uppercase">{s.tag}</div>}
+              <Card key={s.title} className="p-8 border-2 border-gray-100 hover:border-lime-400 hover:shadow-xl transition-all group relative overflow-hidden bg-white">
+                {s.tag && <div className="absolute top-0 right-0 bg-lime-500 text-gray-900 text-xs font-black px-3 py-1 rounded-bl-lg uppercase tracking-wide">{s.tag}</div>}
                 <div className="w-16 h-16 bg-lime-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-lime-100 transition-all">{s.icon}</div>
-                <p className="text-lime-600 text-xs font-bold uppercase tracking-wide mb-1">{s.pitch}</p>
+                <p className="text-lime-600 text-xs font-black uppercase tracking-wider mb-2">→ {s.outcome}</p>
                 <h3 className="text-2xl font-black text-gray-900 mb-3">{s.title}</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed text-sm">{s.body}</p>
                 <ul className="space-y-2 mb-8">
@@ -187,45 +251,73 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-bold rounded-lg">{s.cta}</Button>
+                <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-bold rounded-lg text-sm">{s.cta}</Button>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CASE STUDIES */}
+      {/* ===== CASE STUDIES ===== */}
       <section id="results" className="py-20 md:py-32 bg-gray-900 text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="inline-block bg-lime-500/20 text-lime-400 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Real Results</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">We Do Not Promise Results. We Prove Them.</h2>
-            <p className="text-lg text-gray-400">Real businesses. Real numbers.</p>
+            <span className="inline-block bg-lime-500/20 text-lime-400 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Proof It Works</span>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Real Businesses. Real Results.</h2>
+            <p className="text-lg text-gray-400">We do not guess. We do not promise. We deliver — and here is the proof.</p>
           </div>
+
           <div className="grid md:grid-cols-2 gap-10">
             {[
-              { img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/automation-concept-f9tkgPfZFDHnjgSBecWyVy.webp", tag: "Energy Sector", name: "Nexorwa Energies", sub: "Corporate website redesign + lead generation system", problem: "Outdated website losing B2B clients to competitors with stronger online presence.", solution: "Full corporate redesign with conversion-optimised pages, trust signals, and strategic lead capture.", result: "45% increase in qualified enquiries within 60 days of launch.", stats: [{ n: "+45%", l: "More Leads" }, { n: "60", l: "Days to Results" }, { n: "3x", l: "More Page Views" }], caseHref: "/case-study/nexorwa", liveHref: "https://nexorwaenergies.com" },
-              { img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/conversion-metrics-EYZeFay6NshivZjdXEfKeo.webp", tag: "Service Business", name: "Ogintech Services", sub: "Website + booking system + automation", problem: "Owner spending 3+ hours daily on manual scheduling, missed calls, and chasing unpaid invoices.", solution: "New professional website with online booking, automated appointment reminders, and invoice workflows.", result: "80% reduction in manual admin. Owner reclaimed 15+ hours per week.", stats: [{ n: "80%", l: "Less Admin" }, { n: "15hrs", l: "Saved Per Week" }, { n: "2x", l: "More Bookings" }], caseHref: "/case-study/ogintech", liveHref: "https://ogintechservices.com" },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/automation-concept-f9tkgPfZFDHnjgSBecWyVy.webp",
+                tag: "Energy Sector",
+                name: "Nexorwa Energies",
+                sub: "Corporate website redesign + lead generation system",
+                rows: [
+                  { label: "Problem", color: "text-red-400", text: "Outdated website losing B2B contracts to competitors with a stronger online presence. No lead capture whatsoever." },
+                  { label: "Solution", color: "text-blue-400", text: "Full corporate redesign with conversion-optimised service pages, trust signals, case studies, and a strategic enquiry system." },
+                  { label: "Result", color: "text-lime-400", text: "45% increase in qualified enquiries within 60 days. First new contract attributed directly to the website within 3 weeks." },
+                ],
+                stats: [{ n: "+45%", l: "More Leads" }, { n: "60", l: "Days to Results" }, { n: "3x", l: "More Page Views" }],
+                caseHref: "/case-study/nexorwa",
+                liveHref: "https://nexorwaenergies.com",
+              },
+              {
+                img: "https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/conversion-metrics-EYZeFay6NshivZjdXEfKeo.webp",
+                tag: "Service Business",
+                name: "Ogintech Services",
+                sub: "Website + booking system + automation",
+                rows: [
+                  { label: "Problem", color: "text-red-400", text: "Owner spending 3+ hours daily on manual scheduling, missed calls, and unpaid invoice chasing — with zero time to grow." },
+                  { label: "Solution", color: "text-blue-400", text: "Professional website with online booking, automated reminders, and an invoice workflow that runs without the owner." },
+                  { label: "Result", color: "text-lime-400", text: "80% less manual admin. 15+ hours per week reclaimed. Bookings doubled within 90 days of launch." },
+                ],
+                stats: [{ n: "80%", l: "Less Admin" }, { n: "15hrs", l: "Saved Per Week" }, { n: "2x", l: "More Bookings" }],
+                caseHref: "/case-study/ogintech",
+                liveHref: "https://ogintechservices.com",
+              },
             ].map((c) => (
               <div key={c.name} className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-lime-500/50 transition-all group">
-                <div className="relative h-56 overflow-hidden">
-                  <img src={c.img} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" />
+                <div className="relative h-52 overflow-hidden">
+                  <img src={c.img} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
                   <div className="absolute top-4 left-4 bg-lime-500 text-gray-900 text-xs font-black px-3 py-1 rounded-full uppercase">{c.tag}</div>
                 </div>
                 <div className="p-8">
                   <h3 className="text-2xl font-black text-white mb-1">{c.name}</h3>
                   <p className="text-gray-400 text-sm mb-6">{c.sub}</p>
                   <div className="space-y-3 mb-6">
-                    {[{ label: "Problem", color: "text-red-400", text: c.problem }, { label: "Solution", color: "text-blue-400", text: c.solution }, { label: "Result", color: "text-lime-400", text: c.result }].map((row) => (
+                    {c.rows.map((row) => (
                       <div key={row.label} className="flex gap-3">
-                        <span className={`${row.color} font-bold text-xs w-16 flex-shrink-0 mt-0.5`}>{row.label}:</span>
+                        <span className={`${row.color} font-bold text-xs w-16 flex-shrink-0 pt-0.5`}>{row.label}:</span>
                         <span className="text-gray-300 text-sm">{row.text}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="flex gap-6 mb-6">
+                  <div className="flex gap-6 mb-6 border-t border-white/10 pt-6">
                     {c.stats.map((st) => (
-                      <div key={st.l} className="text-center">
+                      <div key={st.l}>
                         <p className="text-2xl font-black text-lime-400">{st.n}</p>
                         <p className="text-gray-500 text-xs">{st.l}</p>
                       </div>
@@ -239,94 +331,174 @@ export default function Home() {
               </div>
             ))}
           </div>
+
           <div className="text-center mt-12">
-            <p className="text-gray-400 mb-4">Want results like these?</p>
-            <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-400 text-gray-900 font-bold px-10 py-4 rounded-lg text-lg">Get My Free Website Audit →</Button>
+            <p className="text-gray-400 mb-4 text-lg">Your business could be the next success story.</p>
+            <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-400 text-gray-900 font-black px-10 py-4 rounded-lg text-lg">Get My Free Website Audit →</Button>
           </div>
         </div>
       </section>
 
       <Testimonials />
+
+      {/* ===== FREE AUDIT SECTION — GAME CHANGER ===== */}
+      <section id="audit" className="py-20 md:py-32 bg-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-6 uppercase tracking-wide">Free — No Obligation</span>
+                <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
+                  Get a Free Website Audit
+                  <span className="block text-lime-600">Worth $500</span>
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  We will analyse your current website and show you exactly why you are not getting leads — and the precise steps to fix it. No fluff. No sales pressure. Just actionable insights you can use immediately.
+                </p>
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "Why your website is not converting visitors into leads",
+                    "What your competitors are doing that you are missing",
+                    "The exact changes that will get you more enquiries",
+                    "A custom roadmap to grow your online leads",
+                  ].map((point) => (
+                    <li key={point} className="flex items-start gap-3">
+                      <CheckCircle size={20} className="text-lime-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 font-medium">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-600 text-gray-900 font-black px-10 py-4 rounded-lg text-lg flex items-center gap-2 hover:shadow-xl transition-all">
+                  <Search size={20} />
+                  Claim Your Free Audit Now →
+                </Button>
+                <p className="text-gray-400 text-sm mt-3">Takes 2 minutes to request. Response within 24 hours.</p>
+              </div>
+
+              <div className="bg-gray-900 rounded-2xl p-8 text-white">
+                <h3 className="text-xl font-black text-white mb-6">What We Will Cover:</h3>
+                <div className="space-y-5">
+                  {[
+                    { num: "01", title: "Conversion Analysis", body: "We check every page for missed conversion opportunities — CTAs, trust signals, and layout issues costing you leads." },
+                    { num: "02", title: "SEO Health Check", body: "We identify why Google is not sending you traffic and what it will take to rank above your competitors." },
+                    { num: "03", title: "Speed & Mobile Review", body: "Slow sites lose clients. We test your site speed and mobile experience against industry benchmarks." },
+                    { num: "04", title: "Competitor Comparison", body: "We compare your site against your top 3 local competitors and show you exactly where you are losing ground." },
+                  ].map((item) => (
+                    <div key={item.num} className="flex gap-4">
+                      <span className="text-lime-400 font-black text-lg w-8 flex-shrink-0">{item.num}</span>
+                      <div>
+                        <p className="font-bold text-white text-sm mb-1">{item.title}</p>
+                        <p className="text-gray-400 text-sm">{item.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="border-t border-white/10 mt-6 pt-6">
+                  <p className="text-center text-gray-400 text-sm">Valued at <span className="text-white font-bold line-through">$500</span> — yours <span className="text-lime-400 font-black">FREE</span> this month only</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <FAQ />
       <ComparisonChart />
 
-      {/* PRICING */}
+      {/* ===== PRICING ===== */}
       <section id="pricing" className="py-20 md:py-32 bg-gray-50">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-6">
-            <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Pricing</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Invest in Your Business — Not Just a Website</h2>
-            <p className="text-lg text-gray-600">Every package is a complete client-getting system. One-time investment. Lifetime results.</p>
+            <span className="inline-block bg-lime-100 text-lime-700 text-xs font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Investment</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Stop Losing Clients. Start Winning Them.</h2>
+            <p className="text-lg text-gray-600">One-time investment. A website that pays for itself — over and over again.</p>
           </div>
+
           <div className="max-w-xl mx-auto mb-12 bg-amber-50 border border-amber-200 rounded-xl p-4 text-center">
-            <p className="text-amber-800 font-semibold text-sm">We only take on <strong>{slotsLeft} new clients per month</strong> to guarantee quality. Currently <strong>{slotsLeft} spots</strong> available.</p>
+            <p className="text-amber-800 font-semibold text-sm">
+              We only take on <strong>{slotsLeft} new clients per month</strong> to guarantee results. <strong>{slotsLeft} spots</strong> currently available.
+            </p>
           </div>
+
           <div className="grid md:grid-cols-3 gap-8 items-start">
+            {/* Starter */}
             <Card className="p-8 bg-white border-2 border-gray-200 hover:border-lime-300 transition-all">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Starter</p>
+              <p className="text-xs font-black text-gray-400 uppercase tracking-wide mb-2">For Startups</p>
               <h3 className="text-2xl font-black text-gray-900 mb-1">Launch Package</h3>
-              <p className="text-gray-500 text-sm mb-6">Perfect for businesses that need a professional online presence fast</p>
+              <p className="text-gray-500 text-sm mb-6">Get a professional website fast — so you stop losing clients to competitors who look the part</p>
               <div className="mb-8"><span className="text-5xl font-black text-gray-900">$500</span><p className="text-gray-400 mt-1 text-sm">One-time · No hidden fees</p></div>
               <ul className="space-y-3 mb-8">
-                {["5-page professional website", "Mobile responsive design", "Contact & lead capture forms", "Basic on-page SEO", "Google Analytics setup", "30-day post-launch support"].map((f) => (
+                {["5-page professional website", "Mobile responsive design", "Lead capture contact forms", "Basic on-page SEO", "Google Analytics setup", "30-day post-launch support"].map((f) => (
                   <li key={f} className="flex items-start gap-2"><CheckCircle size={15} className="text-lime-500 flex-shrink-0 mt-0.5" /><span className="text-gray-700 text-sm">{f}</span></li>
                 ))}
               </ul>
-              <Button onClick={openContactForm} className="w-full bg-gray-100 text-gray-900 hover:bg-gray-200 rounded-lg font-bold py-3">Claim My Spot →</Button>
+              <Button onClick={openContactForm} className="w-full bg-gray-100 text-gray-900 hover:bg-gray-200 rounded-lg font-bold py-3">Get Started →</Button>
             </Card>
 
+            {/* Growth */}
             <Card className="p-8 bg-gray-900 text-white border-2 border-lime-500 shadow-2xl relative scale-105">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-lime-500 text-gray-900 px-5 py-1 rounded-full text-xs font-black uppercase whitespace-nowrap">⭐ Most Popular</div>
-              <p className="text-xs font-bold text-lime-400 uppercase tracking-wide mb-2">Growth</p>
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-lime-500 text-gray-900 px-5 py-1 rounded-full text-xs font-black uppercase whitespace-nowrap">⭐ Best Value</div>
+              <p className="text-xs font-black text-lime-400 uppercase tracking-wide mb-2">For Growing Businesses</p>
               <h3 className="text-2xl font-black text-white mb-1">Lead Machine Package</h3>
-              <p className="text-gray-400 text-sm mb-6">For businesses serious about getting more leads consistently</p>
+              <p className="text-gray-400 text-sm mb-6">Your complete client-getting system — built to generate consistent enquiries and book clients on autopilot</p>
               <div className="mb-8"><span className="text-5xl font-black text-white">$1,200</span><span className="text-gray-400 ml-2 text-sm">– $1,500</span><p className="text-gray-400 mt-1 text-sm">One-time · No hidden fees</p></div>
               <ul className="space-y-3 mb-8">
-                {["Everything in Launch", "High-converting landing pages", "Online booking system", "Automated lead follow-up", "Local SEO optimisation", "Google Business Profile setup", "Analytics & conversion tracking", "60-day post-launch support"].map((f) => (
+                {["Everything in Launch", "High-converting landing pages", "Online booking system", "Automated lead follow-up sequences", "Local SEO optimisation", "Google Business Profile setup", "Conversion & lead tracking", "60-day post-launch support"].map((f) => (
                   <li key={f} className="flex items-start gap-2"><CheckCircle size={15} className="text-lime-400 flex-shrink-0 mt-0.5" /><span className="text-gray-200 text-sm">{f}</span></li>
                 ))}
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-400 text-gray-900 font-black rounded-lg py-3 text-base">Get More Clients Now →</Button>
-              <p className="text-center text-gray-500 text-xs mt-3">Most clients recover this cost in their first 1–2 new jobs</p>
+              <p className="text-center text-gray-500 text-xs mt-3">Most clients earn this back within their first 1–2 new jobs</p>
             </Card>
 
+            {/* Premium */}
             <Card className="p-8 bg-white border-2 border-gray-200 hover:border-lime-300 transition-all">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-2">Premium</p>
+              <p className="text-xs font-black text-gray-400 uppercase tracking-wide mb-2">For Market Leaders</p>
               <h3 className="text-2xl font-black text-gray-900 mb-1">Domination Package</h3>
-              <p className="text-gray-500 text-sm mb-6">For established businesses ready to dominate their local market</p>
-              <div className="mb-8"><span className="text-5xl font-black text-gray-900">$2,000</span><span className="text-gray-500 ml-1 text-sm">+</span><p className="text-gray-400 mt-1 text-sm">Custom quote · Bespoke solution</p></div>
+              <p className="text-gray-500 text-sm mb-6">The full system — website, automation, and CRM — to dominate your local market and scale</p>
+              <div className="mb-8"><span className="text-5xl font-black text-gray-900">$2,000</span><span className="text-gray-500 ml-1 text-sm">+</span><p className="text-gray-400 mt-1 text-sm">Custom quote — bespoke solution</p></div>
               <ul className="space-y-3 mb-8">
-                {["Everything in Lead Machine", "Full business automation suite", "Payment & invoicing system", "Custom CRM integration", "Reputation management system", "Multi-location support", "Priority support & SLA", "Quarterly strategy reviews"].map((f) => (
+                {["Everything in Lead Machine", "Full business automation suite", "Payment & invoicing system", "Custom CRM integration", "Reputation management", "Multi-location support", "Priority support & SLA", "Quarterly growth reviews"].map((f) => (
                   <li key={f} className="flex items-start gap-2"><CheckCircle size={15} className="text-lime-500 flex-shrink-0 mt-0.5" /><span className="text-gray-700 text-sm">{f}</span></li>
                 ))}
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-bold rounded-lg py-3">Book a Strategy Call →</Button>
             </Card>
           </div>
+
           <div className="mt-12 max-w-2xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-3"><Shield size={22} className="text-lime-600" /><p className="text-lg font-bold text-gray-900">100% Satisfaction Guarantee</p></div>
-            <p className="text-gray-600 text-sm">If you are not completely happy with the design after your first revision round, we will refund your deposit. Zero risk.</p>
+            <p className="text-gray-500 text-sm">Not happy with your first design? We will revise until you are — or refund your deposit. You have nothing to lose.</p>
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ===== FINAL CTA ===== */}
       <section className="py-20 md:py-32 bg-lime-500 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle, black 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">Ready to Get More Clients?</h2>
-            <p className="text-lg md:text-xl text-gray-800 mb-4">Book a free 30-minute website audit. We will show you exactly why your current site is not converting — and how to fix it.</p>
-            <p className="text-gray-700 font-semibold mb-10">No pressure. No sales pitch. Just honest advice.</p>
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4 leading-tight">
+              Every Day You Wait Is a Client Your Competitor Gets.
+            </h2>
+            <p className="text-lg md:text-xl text-gray-800 mb-3 font-semibold">
+              Book your free 30-minute website audit today.
+            </p>
+            <p className="text-gray-700 mb-10">
+              We will tell you exactly what is stopping you from getting leads — and exactly how to fix it. No cost. No obligation. Just clarity.
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Button onClick={openContactForm} className="bg-gray-900 text-lime-400 hover:bg-gray-800 rounded-lg px-10 py-4 text-xl font-black flex items-center justify-center gap-2 shadow-xl">
                 Book My Free Audit Now <ArrowRight size={22} />
               </Button>
               <a href="https://wa.me/2348160357708" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-lime-400 rounded-lg px-10 py-4 text-xl font-black transition-all">
-                <MessageCircle size={22} /> WhatsApp Us
+                <MessageCircle size={22} /> Chat on WhatsApp
               </a>
             </div>
+
             <div className="flex flex-wrap justify-center gap-6 text-gray-800 text-sm font-semibold">
-              <span className="flex items-center gap-2"><CheckCircle size={16} /> Free — no obligation</span>
+              <span className="flex items-center gap-2"><CheckCircle size={16} /> 100% Free — no strings</span>
               <span className="flex items-center gap-2"><CheckCircle size={16} /> Results in 2–4 weeks</span>
               <span className="flex items-center gap-2"><CheckCircle size={16} /> Only {slotsLeft} spots left this month</span>
             </div>
@@ -360,7 +532,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                {[["Results", "#results"], ["Pricing", "#pricing"], ["Case Studies", "/case-study/nexorwa"], ["Blog", "/blog"]].map(([label, href]) => (
+                {[["Results", "#results"], ["Free Audit", "#audit"], ["Pricing", "#pricing"], ["Blog", "/blog"]].map(([label, href]) => (
                   <li key={label}><a href={href} className="text-gray-400 hover:text-lime-400 transition">{label}</a></li>
                 ))}
               </ul>
@@ -372,7 +544,7 @@ export default function Home() {
                 <a href="mailto:info@techsynergyhq.com" className="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition"><Mail size={15} /> info@techsynergyhq.com</a>
                 <a href="tel:+2348160357708" className="flex items-center gap-2 text-gray-400 hover:text-lime-400 transition"><Phone size={15} /> +234 816 035 7708</a>
               </div>
-              <Button onClick={openContactForm} className="mt-6 w-full bg-lime-500 hover:bg-lime-400 text-gray-900 font-bold rounded-lg text-sm">Book Free Audit →</Button>
+              <Button onClick={openContactForm} className="mt-6 w-full bg-lime-500 hover:bg-lime-400 text-gray-900 font-bold rounded-lg text-sm">Claim Free Audit →</Button>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
