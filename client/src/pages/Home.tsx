@@ -19,6 +19,7 @@ import ComparisonChart from "@/components/ComparisonChart";
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/techsynergy-logo_d418b90e.png";
 
 export default function Home() {
+  const openContactForm = () => window.dispatchEvent(new Event("open-contact-form"));
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function Home() {
             <a href="#pricing" className="text-gray-700 hover:text-lime-600 transition font-medium text-sm md:text-base">
               Pricing
             </a>
-            <Button className="bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg px-4 md:px-6 py-2 text-sm md:text-base transition-all hover:shadow-lg">
+            <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg px-4 md:px-6 py-2 text-sm md:text-base transition-all hover:shadow-lg">
               Get Started
             </Button>
           </div>
@@ -85,7 +86,7 @@ export default function Home() {
                 Get a Free Website Review
                 <ArrowRight size={20} />
               </Button>
-              <Button variant="outline" className="border-2 border-gray-300 text-gray-900 rounded-lg px-8 py-3 text-lg font-semibold hover:bg-gray-50 hover:border-lime-500">
+              <Button onClick={openContactForm} variant="outline" className="border-2 border-gray-300 text-gray-900 rounded-lg px-8 py-3 text-lg font-semibold hover:bg-gray-50 hover:border-lime-500">
                 Learn More
               </Button>
             </div>
@@ -253,7 +254,7 @@ export default function Home() {
                   Fast Loading Times
                 </li>
               </ul>
-              <Button className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
                 Learn More
               </Button>
             </Card>
@@ -280,7 +281,7 @@ export default function Home() {
                   Analytics Integrated
                 </li>
               </ul>
-              <Button className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
                 Learn More
               </Button>
             </Card>
@@ -307,7 +308,7 @@ export default function Home() {
                   Auto Confirmations
                 </li>
               </ul>
-              <Button className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
                 Learn More
               </Button>
             </Card>
@@ -334,7 +335,7 @@ export default function Home() {
                   CRM Integration
                 </li>
               </ul>
-              <Button className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
                 Learn More
               </Button>
             </Card>
@@ -496,7 +497,7 @@ export default function Home() {
                   <span className="text-gray-700">Basic SEO</span>
                 </li>
               </ul>
-              <Button className="w-full bg-gray-200 text-gray-900 hover:bg-gray-300 rounded-lg font-semibold">
+              <Button onClick={openContactForm} className="w-full bg-gray-200 text-gray-900 hover:bg-gray-300 rounded-lg font-semibold">
                 Get Started
               </Button>
             </Card>
@@ -545,7 +546,7 @@ export default function Home() {
                   <span>Analytics Dashboard</span>
                 </li>
               </ul>
-              <Button className="w-full bg-gray-900 text-lime-400 hover:bg-gray-800 rounded-lg font-semibold">
+              <Button onClick={openContactForm} className="w-full bg-gray-900 text-lime-400 hover:bg-gray-800 rounded-lg font-semibold">
                 Get Started
               </Button>
             </Card>
@@ -591,7 +592,7 @@ export default function Home() {
                   <span className="text-gray-700">Priority Support</span>
                 </li>
               </ul>
-              <Button className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
                 Get Started
               </Button>
             </Card>

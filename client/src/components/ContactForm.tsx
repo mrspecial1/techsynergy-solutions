@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
 import { Mail, Phone, MessageCircle, Loader2, X } from "lucide-react";
@@ -12,6 +12,12 @@ import { Mail, Phone, MessageCircle, Loader2, X } from "lucide-react";
 
 export default function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setIsOpen(true);
+    window.addEventListener("open-contact-form", handler);
+    return () => window.removeEventListener("open-contact-form", handler);
+  }, []);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
