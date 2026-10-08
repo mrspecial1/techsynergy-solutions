@@ -455,11 +455,20 @@ export default function Home() {
                 <p className="text-gray-600 mb-4">
                   A fundraising platform with campaign management, account workflows, payment-related operations, and administrative tools.
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Platform Development</span>
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Campaign Workflows</span>
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Admin Tools</span>
                 </div>
+                <a
+                  href="https://gogiveafrica.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold"
+                >
+                  Visit GoGive Africa
+                  <ExternalLink size={18} />
+                </a>
               </div>
             </Card>
           </div>
