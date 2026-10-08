@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, Zap, Globe, Smartphone, Cog, TrendingUp, ExternalLink, MessageCircle, Mail, Phone } from "lucide-react";
+import { ArrowRight, Zap, Globe, Smartphone, Cog, TrendingUp, ExternalLink, MessageCircle, Mail, Phone, Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import ContactForm from "@/components/ContactForm";
 import LeadMagnet from "@/components/LeadMagnet";
@@ -444,11 +444,13 @@ export default function Home() {
             <Card className="overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
               <div className="relative h-64 bg-gradient-to-br from-lime-500 to-lime-700 overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/services-illustration-eVfCNvbdRvM8yQvWjGp8Hj.webp"
-                  alt="GoGive Africa platform"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+                <div className="w-full h-full bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 flex flex-col items-center justify-center text-white">
+                  <div className="rounded-2xl bg-white/15 p-5 shadow-lg">
+                    <Heart size={54} fill="currentColor" aria-hidden="true" />
+                  </div>
+                  <p className="mt-5 text-3xl font-bold"><span className="text-emerald-200">Go</span>Give <span className="text-amber-300">Africa</span></p>
+                  <p className="mt-2 text-sm text-emerald-100">Fundraising platform</p>
+                </div>
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">GoGive Africa</h3>
