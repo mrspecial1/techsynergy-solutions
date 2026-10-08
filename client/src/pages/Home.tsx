@@ -353,7 +353,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1 */}
             <Card className="overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
               <div className="relative h-64 bg-gradient-to-br from-lime-500 to-lime-700 overflow-hidden">
@@ -436,6 +436,29 @@ export default function Home() {
                     Visit Live Website
                     <ExternalLink size={16} />
                   </a>
+                </div>
+              </div>
+            </Card>
+
+            {/* Project 3 */}
+            <Card className="overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
+              <div className="relative h-64 bg-gradient-to-br from-lime-500 to-lime-700 overflow-hidden">
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/services-illustration-eVfCNvbdRvM8yQvWjGp8Hj.webp"
+                  alt="GoGive Africa platform"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">GoGive Africa</h3>
+                <p className="text-gray-600 mb-4">
+                  A fundraising platform with campaign management, account workflows, payment-related operations, and administrative tools.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Platform Development</span>
+                  <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Campaign Workflows</span>
+                  <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Admin Tools</span>
                 </div>
               </div>
             </Card>
