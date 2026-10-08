@@ -3,11 +3,8 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, Zap, Globe, Smartphone, Cog, TrendingUp, ExternalLink, MessageCircle, Mail, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import ContactForm from "@/components/ContactForm";
-import Testimonials from "@/components/Testimonials";
 import LeadMagnet from "@/components/LeadMagnet";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
-import FAQ from "@/components/FAQ";
-import ComparisonChart from "@/components/ComparisonChart";
 
 /**
  * TechSynergy Solutions - Custom Software & Web Systems
@@ -248,7 +245,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
-                  SEO Optimized
+                  Search-ready foundations
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
@@ -271,7 +268,7 @@ export default function Home() {
               <ul className="space-y-2 text-gray-700 mb-6">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
-                  A/B Testing Ready
+                  Workflow-specific interfaces
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
@@ -279,7 +276,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
-                  Analytics Integrated
+                  Role-based user journeys
                 </li>
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
@@ -302,11 +299,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
-                  Secure Payments
+                  Payment options where appropriate
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-lime-600 rounded-full" />
-                  Auto Confirmations
+                  Clear confirmation flows
                 </li>
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
@@ -370,19 +367,21 @@ export default function Home() {
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Nexorwa Energies</h3>
                 <p className="text-gray-600 mb-4">
-                  Complete corporate website redesign for a leading energy company. Increased lead generation by 45% with optimized conversion paths.
+                  Corporate website redesign focused on a clearer service narrative and straightforward enquiry paths.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Web Design</span>
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">SEO</span>
-                  <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Lead Generation</span>
+                  <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Enquiry Flow</span>
                 </div>
                 <div className="flex flex-col gap-2">
                   <a
-                    href="/case-study/nexorwa"
+                    href="https://nexorwaenergies.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold"
                   >
-                    Read Case Study
+                    View Website
                     <ExternalLink size={18} />
                   </a>
                   <a
@@ -411,7 +410,7 @@ export default function Home() {
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Ogintech Services</h3>
                 <p className="text-gray-600 mb-4">
-                  Business website with integrated booking system and automation. Reduced manual scheduling by 80% and improved client experience.
+                  Business website and booking workflow designed to make client scheduling easier to manage.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Web Development</span>
@@ -420,10 +419,12 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <a
-                    href="/case-study/ogintech"
+                    href="https://ogintechservices.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold"
                   >
-                    Read Case Study
+                    View Website
                     <ExternalLink size={18} />
                   </a>
                   <a
@@ -441,15 +442,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <Testimonials />
-
-      {/* FAQ Section */}
-      <FAQ />
-
-      {/* Comparison Chart Section */}
-      <ComparisonChart />
 
       {/* Engagement Section */}
       <section id="pricing" className="py-20 md:py-32 bg-gray-50">

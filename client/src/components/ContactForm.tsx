@@ -84,7 +84,7 @@ export default function ContactForm() {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-gradient-to-r from-lime-500 to-lime-600 p-6 flex items-center justify-between">
-              <h3 className="text-2xl font-bold text-gray-900">Get a Free Website Review</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Discuss Your Project</h3>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gray-900 hover:text-gray-700 transition"
@@ -178,12 +178,12 @@ export default function ContactForm() {
                     Sending...
                   </>
                 ) : (
-                  "Send My Review Request"
+                  "Send Project Enquiry"
                 )}
               </Button>
 
               <p className="text-xs text-gray-600 text-center">
-                We'll review your website and send recommendations within 24 hours.
+                We’ll use these details only to respond to your enquiry.
               </p>
 
               <div className="border-t pt-4">
