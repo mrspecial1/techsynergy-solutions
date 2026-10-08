@@ -70,13 +70,13 @@ export default function BlogArticle({
         </div>
 
         {/* Read More Link */}
-        <button
-          onClick={() => window.dispatchEvent(new Event("open-contact-form"))}
+        <a
+          href={`/blog/${slug}`}
           className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold transition"
         >
           Read Article
           <ArrowRight size={16} />
-        </button>
+        </a>
       </div>
     </Card>
   );

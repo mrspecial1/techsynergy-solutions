@@ -27,10 +27,13 @@ export default function ContactForm() {
     message: "",
   });
 
-  // Initialize EmailJS from environment variables
+  const emailjsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const emailjsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailjsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
   const initEmailJS = () => {
-    if (!window.emailjsInitialized) {
-      emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+    if (emailjsPublicKey && !window.emailjsInitialized) {
+      emailjs.init(emailjsPublicKey);
       window.emailjsInitialized = true;
     }
   };
@@ -45,11 +48,8 @@ export default function ContactForm() {
     setIsLoading(true);
 
     try {
-      initEmailJS();
-
-      // Send email via EmailJS
       const templateParams = {
-        to_email: "info@techsynergyhq.com",
+        to_email: "hello@techsynergyhq.com",
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
@@ -58,15 +58,17 @@ export default function ContactForm() {
         reply_to: formData.email,
       };
 
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams
-      );
-
-      toast.success("Thank you! We'll contact you within 24 hours.");
-      setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-      setIsOpen(false);
+      if (emailjsPublicKey && emailjsServiceId && emailjsTemplateId) {
+        initEmailJS();
+        await emailjs.send(emailjsServiceId, emailjsTemplateId, templateParams);
+        toast.success("Thank you! Your message has been sent.");
+        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+        setIsOpen(false);
+      } else {
+        const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nCompany: ${formData.company || "Not provided"}\n\nProject details:\n${formData.message}`;
+        window.location.href = `mailto:hello@techsynergyhq.com?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(body)}`;
+        toast.message("Your email app is opening with your enquiry.");
+      }
     } catch (error) {
       console.error("Email send error:", error);
       toast.error("Failed to send message. Please try again or contact us via WhatsApp.");

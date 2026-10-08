@@ -310,7 +310,7 @@ export default function ComparisonChart() {
             Ready to see the difference? Let's discuss how we can help your business grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-lime-500 text-gray-900 font-semibold rounded-lg hover:bg-lime-600 transition">
+            <button onClick={() => window.dispatchEvent(new Event("open-contact-form"))} className="px-8 py-3 bg-lime-500 text-gray-900 font-semibold rounded-lg hover:bg-lime-600 transition">
               Get Started Today
             </button>
             <a

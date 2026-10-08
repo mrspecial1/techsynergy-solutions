@@ -8,7 +8,7 @@ import { Search } from "lucide-react";
  * Drives organic traffic and establishes authority
  */
 
-const blogArticles = [
+export const blogArticles = [
   {
     id: "1",
     title: "Why 80% of Business Websites Fail to Convert Visitors Into Clients",

@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import CaseStudyNexorwa from "./pages/CaseStudyNexorwa";
 import CaseStudyOgintech from "./pages/CaseStudyOgintech";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import LiveChat from "./components/LiveChat";
 import RetargetingPixels from "./components/RetargetingPixels";
 
@@ -19,6 +20,7 @@ function Router() {
       <Route path={"/case-study/nexorwa"} component={CaseStudyNexorwa} />
       <Route path={"/case-study/ogintech"} component={CaseStudyOgintech} />
       <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/:slug"} component={BlogPost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
