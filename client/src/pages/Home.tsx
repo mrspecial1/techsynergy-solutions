@@ -355,7 +355,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1 */}
-            <Card className="overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
+            <Card className="order-2 overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
               <div className="relative h-64 bg-gradient-to-br from-lime-500 to-lime-700 overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
                 <img
@@ -398,7 +398,7 @@ export default function Home() {
             </Card>
 
             {/* Project 2 */}
-            <Card className="overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
+            <Card className="order-3 overflow-hidden border border-gray-200 hover:shadow-2xl transition-all group">
               <div className="relative h-64 bg-gradient-to-br from-lime-500 to-lime-700 overflow-hidden">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all" />
                 <img
