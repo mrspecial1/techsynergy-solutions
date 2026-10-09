@@ -9,6 +9,7 @@ import CaseStudyNexorwa from "./pages/CaseStudyNexorwa";
 import CaseStudyOgintech from "./pages/CaseStudyOgintech";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Legal from "./pages/Legal";
 import LiveChat from "./components/LiveChat";
 import RetargetingPixels from "./components/RetargetingPixels";
 
@@ -21,6 +22,8 @@ function Router() {
       <Route path={"/case-study/ogintech"} component={CaseStudyOgintech} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/blog/:slug"} component={BlogPost} />
+      <Route path={"/privacy"} component={() => <Legal type="privacy" />} />
+      <Route path={"/terms"} component={() => <Legal type="terms" />} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

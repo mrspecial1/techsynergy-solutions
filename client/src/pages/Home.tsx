@@ -727,8 +727,8 @@ export default function Home() {
                 &copy; 2026 TechSynergy Solutions. All rights reserved.
               </p>
               <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="mailto:hello@techsynergyhq.com?subject=Privacy%20enquiry" className="text-gray-400 hover:text-lime-400 transition text-sm">Privacy</a>
-                <a href="mailto:hello@techsynergyhq.com?subject=Terms%20enquiry" className="text-gray-400 hover:text-lime-400 transition text-sm">Terms</a>
+                <a href="/privacy" className="text-gray-400 hover:text-lime-400 transition text-sm">Privacy</a>
+                <a href="/terms" className="text-gray-400 hover:text-lime-400 transition text-sm">Terms</a>
               </div>
             </div>
           </div>
