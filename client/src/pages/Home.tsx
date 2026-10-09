@@ -34,23 +34,23 @@ export default function Home() {
       <WhatsAppWidget />
       <LeadMagnet />
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-gray-100" : "bg-white/75 backdrop-blur-md"}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-[#08110d]/95 backdrop-blur-xl shadow-2xl border-b border-white/10" : "bg-[#08110d]/85 backdrop-blur-md"}`}>
         <div className="container flex items-center justify-between py-3 md:py-4">
           <div className="flex items-center gap-3">
             <img src={LOGO_URL} alt="TechSynergy Solutions" className="w-12 h-12 md:w-14 md:h-14" />
-            <span className="font-bold text-lg md:text-xl hidden sm:inline text-gray-900">TechSynergy</span>
+            <span className="font-bold text-lg md:text-xl hidden sm:inline text-white">TechSynergy</span>
           </div>
           <div className="flex items-center gap-3 md:gap-6">
-            <a href="#services" className="hidden sm:inline text-gray-600 hover:text-gray-950 transition font-medium text-sm">
+            <a href="#services" className="hidden sm:inline text-gray-300 hover:text-lime-300 transition font-medium text-sm">
               Services
             </a>
-            <a href="#portfolio" className="hidden md:inline text-gray-600 hover:text-gray-950 transition font-medium text-sm">
+            <a href="#portfolio" className="hidden md:inline text-gray-300 hover:text-lime-300 transition font-medium text-sm">
               Portfolio
             </a>
-            <a href="#pricing" className="hidden lg:inline text-gray-600 hover:text-gray-950 transition font-medium text-sm">
+            <a href="#pricing" className="hidden lg:inline text-gray-300 hover:text-lime-300 transition font-medium text-sm">
               Engagement
             </a>
-            <Button onClick={openContactForm} className="bg-gray-950 hover:bg-gray-800 text-white font-semibold rounded-full px-4 md:px-6 py-2 text-sm transition-all hover:shadow-lg">
+            <Button onClick={openContactForm} className="bg-lime-400 hover:bg-lime-300 text-gray-950 font-semibold rounded-full px-4 md:px-6 py-2 text-sm transition-all hover:shadow-[0_0_28px_rgba(163,230,53,.35)]">
               Start a project
             </Button>
           </div>
@@ -58,33 +58,30 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-36 overflow-hidden">
+      <section className="relative bg-[#08110d] pt-32 pb-20 md:pt-44 md:pb-36 overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('https://d2xsxph8kpxj0f.cloudfront.net/310519663542366846/HQEaRawH9PpqqwFQvErvZi/hero-background-jLzVKRuEcukMN8VdXkfvE7.webp')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
+            backgroundImage: "radial-gradient(circle at 80% 22%, rgba(163,230,53,.20), transparent 22%), radial-gradient(circle at 76% 72%, rgba(56,189,248,.14), transparent 25%), linear-gradient(120deg, #08110d 15%, #0c1a13 58%, #10231a 100%)",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/25 z-0" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)] bg-[size:54px_54px] z-0" />
 
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center rounded-full border border-lime-200 bg-lime-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-lime-800 mb-6">Systems for ambitious teams</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-950 mb-6 leading-[1.05] tracking-tight">
+            <p className="inline-flex items-center rounded-full border border-lime-300/25 bg-lime-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-lime-300 mb-6">Systems for ambitious teams</p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
               Custom software and web systems built around how your business works
             </h1>
-            <p className="max-w-2xl text-lg md:text-xl text-gray-600 mb-9 leading-relaxed">
+            <p className="max-w-2xl text-lg md:text-xl text-gray-300 mb-9 leading-relaxed">
               We design and engineer websites, client portals, internal platforms, and workflow automation for businesses that need more than a brochure site.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button onClick={openContactForm} className="bg-lime-500 hover:bg-lime-400 text-gray-950 font-semibold rounded-full px-7 py-3 text-base flex items-center gap-2 transition-all hover:shadow-xl">
+              <Button onClick={openContactForm} className="bg-lime-400 hover:bg-lime-300 text-gray-950 font-semibold rounded-full px-7 py-3 text-base flex items-center gap-2 transition-all hover:shadow-[0_0_35px_rgba(163,230,53,.30)]">
                 Discuss Your Project
                 <ArrowRight size={20} />
               </Button>
-              <Button asChild variant="outline" className="border border-gray-300 bg-white/70 text-gray-900 rounded-full px-7 py-3 text-base font-semibold hover:bg-white hover:border-gray-400">
+              <Button asChild variant="outline" className="border border-white/20 bg-white/5 text-white rounded-full px-7 py-3 text-base font-semibold hover:bg-white/10 hover:border-lime-300/50">
                 <a href="#services">
                 See What We Build
                 </a>
@@ -92,17 +89,17 @@ export default function Home() {
             </div>
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
-              <div className="rounded-2xl border border-white/80 bg-white/75 p-4 shadow-sm backdrop-blur">
-                <p className="font-semibold text-gray-900">Custom builds</p>
-                <p className="text-sm text-gray-600 mt-1">Designed around your workflow</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur">
+                <p className="font-semibold text-white">Custom builds</p>
+                <p className="text-sm text-gray-400 mt-1">Designed around your workflow</p>
               </div>
-              <div className="rounded-2xl border border-white/80 bg-white/75 p-4 shadow-sm backdrop-blur">
-                <p className="font-semibold text-gray-900">Web systems</p>
-                <p className="text-sm text-gray-600 mt-1">Portals, platforms & automation</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur">
+                <p className="font-semibold text-white">Web systems</p>
+                <p className="text-sm text-gray-400 mt-1">Portals, platforms & automation</p>
               </div>
-              <div className="rounded-2xl border border-white/80 bg-white/75 p-4 shadow-sm backdrop-blur">
-                <p className="font-semibold text-gray-900">Engineering-led</p>
-                <p className="text-sm text-gray-600 mt-1">Built for maintainability</p>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur">
+                <p className="font-semibold text-white">Engineering-led</p>
+                <p className="text-sm text-gray-400 mt-1">Built for maintainability</p>
               </div>
             </div>
           </div>
