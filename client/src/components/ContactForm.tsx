@@ -24,6 +24,9 @@ export default function ContactForm() {
     email: "",
     phone: "",
     company: "",
+    currentProcess: "",
+    budget: "",
+    timeline: "",
     message: "",
   });
 
@@ -38,7 +41,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -49,11 +52,14 @@ export default function ContactForm() {
 
     try {
       const templateParams = {
-        to_email: "hello@techsynergyhq.com",
+        to_email: "info@techsynergyhq.com",
         from_name: formData.name,
         from_email: formData.email,
         phone: formData.phone,
         company: formData.company,
+        current_process: formData.currentProcess,
+        budget: formData.budget,
+        timeline: formData.timeline,
         message: formData.message,
         reply_to: formData.email,
       };
@@ -62,11 +68,11 @@ export default function ContactForm() {
         initEmailJS();
         await emailjs.send(emailjsServiceId, emailjsTemplateId, templateParams);
         toast.success("Thank you! Your message has been sent.");
-        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", company: "", currentProcess: "", budget: "", timeline: "", message: "" });
         setIsOpen(false);
       } else {
-        const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nCompany: ${formData.company || "Not provided"}\n\nProject details:\n${formData.message}`;
-        window.location.href = `mailto:hello@techsynergyhq.com?subject=${encodeURIComponent("New project enquiry")}&body=${encodeURIComponent(body)}`;
+        const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\nCompany: ${formData.company || "Not provided"}\nCurrent process: ${formData.currentProcess || "Not provided"}\nBudget range: ${formData.budget || "Not provided"}\nTimeline: ${formData.timeline || "Not provided"}\n\nProject details:\n${formData.message}`;
+        window.location.href = `mailto:info@techsynergyhq.com?subject=${encodeURIComponent("New systems consultation enquiry")}&body=${encodeURIComponent(body)}`;
         toast.message("Your email app is opening with your enquiry.");
       }
     } catch (error) {
@@ -94,6 +100,14 @@ export default function ContactForm() {
             </div>
 
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-semibold text-gray-900 mb-2">What is happening today?</label>
+                <textarea name="currentProcess" value={formData.currentProcess} onChange={handleChange} rows={2} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-lime-500 resize-none" placeholder="Describe the manual process or system gap" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div><label className="block text-sm font-semibold text-gray-900 mb-2">Budget range</label><select name="budget" value={formData.budget} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg"><option value="">Select a range</option><option>Under $5,000</option><option>$5,000–$15,000</option><option>$15,000–$50,000</option><option>$50,000+</option><option>Need guidance</option></select></div>
+                <div><label className="block text-sm font-semibold text-gray-900 mb-2">Target timeline</label><select name="timeline" value={formData.timeline} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg"><option value="">Select a timeline</option><option>Within 30 days</option><option>1–3 months</option><option>3–6 months</option><option>Planning ahead</option></select></div>
+              </div>
               <div>
                 <label className="block text-sm font-semibold text-gray-900 mb-2">
                   Full Name *
@@ -178,7 +192,7 @@ export default function ContactForm() {
                     Sending...
                   </>
                 ) : (
-                  "Send Project Enquiry"
+                  "Request a systems consultation"
                 )}
               </Button>
 
