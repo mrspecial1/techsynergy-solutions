@@ -250,9 +250,9 @@ export default function Home() {
                   Fast Loading Times
                 </li>
               </ul>
-              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button asChild className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg"><a href="/services/business-websites">
                 Discuss this service
-              </Button>
+              </a></Button>
             </Card>
 
             <Card className="p-8 bg-white border border-gray-200 hover:shadow-xl hover:border-lime-400 transition-all group">
@@ -277,9 +277,9 @@ export default function Home() {
                   Role-based user journeys
                 </li>
               </ul>
-              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button asChild className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg"><a href="/services/client-portals">
                 Discuss this service
-              </Button>
+              </a></Button>
             </Card>
 
             <Card className="p-8 bg-white border border-gray-200 hover:shadow-xl hover:border-lime-400 transition-all group">
@@ -304,9 +304,9 @@ export default function Home() {
                   Clear confirmation flows
                 </li>
               </ul>
-              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button asChild className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg"><a href="/services/booking-systems">
                 Discuss this service
-              </Button>
+              </a></Button>
             </Card>
 
             <Card className="p-8 bg-white border border-gray-200 hover:shadow-xl hover:border-lime-400 transition-all group md:col-span-3 lg:col-span-1">
@@ -331,9 +331,9 @@ export default function Home() {
                   CRM Integration
                 </li>
               </ul>
-              <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
+              <Button asChild className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg"><a href="/services/workflow-automation">
                 Discuss this service
-              </Button>
+              </a></Button>
             </Card>
           </div>
         </div>
