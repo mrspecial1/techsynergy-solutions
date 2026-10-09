@@ -253,7 +253,7 @@ export default function Home() {
                 </li>
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
-                Learn More
+                Discuss this service
               </Button>
             </Card>
 
@@ -280,7 +280,7 @@ export default function Home() {
                 </li>
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
-                Learn More
+                Discuss this service
               </Button>
             </Card>
 
@@ -307,7 +307,7 @@ export default function Home() {
                 </li>
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
-                Learn More
+                Discuss this service
               </Button>
             </Card>
 
@@ -334,7 +334,7 @@ export default function Home() {
                 </li>
               </ul>
               <Button onClick={openContactForm} className="w-full bg-lime-500 hover:bg-lime-600 text-gray-900 font-semibold rounded-lg">
-                Learn More
+                Discuss this service
               </Button>
             </Card>
           </div>
@@ -384,15 +384,6 @@ export default function Home() {
                     View Website
                     <ExternalLink size={18} />
                   </a>
-                  <a
-                    href="https://nexorwaenergies.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-700 font-semibold text-sm"
-                  >
-                    Visit Live Website
-                    <ExternalLink size={16} />
-                  </a>
                 </div>
               </div>
             </Card>
@@ -426,15 +417,6 @@ export default function Home() {
                   >
                     View Website
                     <ExternalLink size={18} />
-                  </a>
-                  <a
-                    href="https://ogintechservices.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-700 font-semibold text-sm"
-                  >
-                    Visit Live Website
-                    <ExternalLink size={16} />
                   </a>
                 </div>
               </div>
@@ -715,12 +697,7 @@ export default function Home() {
                 </li>
                 <li>
                   <a href="#portfolio" className="text-gray-400 hover:text-lime-400 transition">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog" className="text-gray-400 hover:text-lime-400 transition">
-                    Blog
+                    Our Work
                   </a>
                 </li>
               </ul>
