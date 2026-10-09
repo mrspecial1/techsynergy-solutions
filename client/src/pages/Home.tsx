@@ -51,7 +51,7 @@ export default function Home() {
               Engagement
             </a>
             <Button onClick={openContactForm} className="bg-lime-400 hover:bg-lime-300 text-gray-950 font-semibold rounded-full px-4 md:px-6 py-2 text-sm transition-all hover:shadow-[0_0_28px_rgba(163,230,53,.35)]">
-              Start a project
+              Book a consultation
             </Button>
           </div>
         </div>
@@ -69,37 +69,37 @@ export default function Home() {
 
         <div className="container relative z-10">
           <div className="max-w-3xl">
-            <p className="inline-flex items-center rounded-full border border-lime-300/25 bg-lime-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-lime-300 mb-6">Systems for ambitious teams</p>
+            <p className="inline-flex items-center rounded-full border border-lime-300/25 bg-lime-300/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-lime-300 mb-6">For established businesses with complex workflows</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
-              Custom software and web systems built around how your business works
+              Replace manual operations with systems built around your business
             </h1>
             <p className="max-w-2xl text-lg md:text-xl text-gray-300 mb-9 leading-relaxed">
-              We design and engineer websites, client portals, internal platforms, and workflow automation for businesses that need more than a brochure site.
+              TechSynergy designs and engineers client portals, internal platforms, websites, and workflow automation for teams ready to make their operations clearer, faster, and easier to scale.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button onClick={openContactForm} className="bg-lime-400 hover:bg-lime-300 text-gray-950 font-semibold rounded-full px-7 py-3 text-base flex items-center gap-2 transition-all hover:shadow-[0_0_35px_rgba(163,230,53,.30)]">
-                Discuss Your Project
+                Book a systems consultation
                 <ArrowRight size={20} />
               </Button>
               <Button asChild variant="outline" className="border border-white/20 bg-white/5 text-white rounded-full px-7 py-3 text-base font-semibold hover:bg-white/10 hover:border-lime-300/50">
                 <a href="#services">
-                See What We Build
+                Explore capabilities
                 </a>
               </Button>
             </div>
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur">
-                <p className="font-semibold text-white">Custom builds</p>
-                <p className="text-sm text-gray-400 mt-1">Designed around your workflow</p>
+                <p className="font-semibold text-white">Designed to fit</p>
+                <p className="text-sm text-gray-400 mt-1">Built around real operational needs</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur">
-                <p className="font-semibold text-white">Web systems</p>
-                <p className="text-sm text-gray-400 mt-1">Portals, platforms & automation</p>
+                <p className="font-semibold text-white">One connected system</p>
+                <p className="text-sm text-gray-400 mt-1">Portals, platforms, and automation</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur">
-                <p className="font-semibold text-white">Engineering-led</p>
-                <p className="text-sm text-gray-400 mt-1">Built for maintainability</p>
+                <p className="font-semibold text-white">Built to endure</p>
+                <p className="text-sm text-gray-400 mt-1">Maintainable beyond launch</p>
               </div>
             </div>
           </div>
