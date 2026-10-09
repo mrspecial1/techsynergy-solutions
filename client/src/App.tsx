@@ -11,6 +11,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Legal from "./pages/Legal";
 import ServiceScope from "./pages/ServiceScope";
+import ProjectProof from "./pages/ProjectProof";
 import LiveChat from "./components/LiveChat";
 import RetargetingPixels from "./components/RetargetingPixels";
 
@@ -26,6 +27,7 @@ function Router() {
       <Route path={"/privacy"} component={() => <Legal type="privacy" />} />
       <Route path={"/terms"} component={() => <Legal type="terms" />} />
       <Route path={"/services/:service"} component={ServiceScope} />
+      <Route path={"/work/:project"} component={ProjectProof} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

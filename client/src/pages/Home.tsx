@@ -373,6 +373,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Enquiry Flow</span>
                 </div>
                 <div className="flex flex-col gap-2">
+                  <a href="/work/nexorwa" className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold">Project scope <ExternalLink size={18} /></a>
                   <a
                     href="https://nexorwaenergies.com"
                     target="_blank"
@@ -407,6 +408,7 @@ export default function Home() {
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Automation</span>
                 </div>
                 <div className="flex flex-col gap-2">
+                  <a href="/work/ogintech" className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold">Project scope <ExternalLink size={18} /></a>
                   <a
                     href="https://ogintechservices.com"
                     target="_blank"
@@ -442,6 +444,10 @@ export default function Home() {
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Campaign Workflows</span>
                   <span className="px-3 py-1 bg-lime-100 text-lime-700 rounded-full text-sm font-medium">Admin Tools</span>
                 </div>
+                <a
+                  href="/work/gogive-africa"
+                  className="inline-flex items-center gap-2 text-lime-600 hover:text-lime-700 font-semibold mb-3"
+                >Project scope <ExternalLink size={18} /></a>
                 <a
                   href="https://gogiveafrica.com"
                   target="_blank"
